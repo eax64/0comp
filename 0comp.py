@@ -5,6 +5,7 @@ import base64
 import zlib
 import gzip
 import bz2
+import sys
 
 MAX_FILENAME_LEN = 255
 
@@ -19,7 +20,7 @@ def compress(fn):
 def decompress(fn):
     data = base64.b64decode(fn)
     comptype, data = data[0], data[1:]
-    print([bz2, gzip, zlib][comptype].decompress(data).decode("utf8"))
+    sys.stdout.write([bz2, gzip, zlib][comptype].decompress(data).decode("utf8"))
     
 
 if __name__ == "__main__":
