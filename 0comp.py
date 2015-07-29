@@ -18,7 +18,7 @@ def compress(fn):
     print("The compressed file has been saved in the file: %s" % compressed[0])
 
 def decompress(fn):
-    data = base64.b64decode(fn.replace("_", "/"))
+    data = base64.b64decode(fn.replace("_", "/").encode("utf8"))
     comptype, data = data[0], data[1:]
     sys.stdout.write([bz2, gzip, zlib][comptype].decompress(data).decode("utf8"))
     
