@@ -30,8 +30,8 @@ if __name__ == "__main__":
     parser.add_argument('FILENAME', help="The file to (de)compress")
     args = parser.parse_args()
 
-    if args.compress == True and args.decompress == True:
-        exit("You can't use -c AND -d at the same time")
+    if args.compress == args.decompress:
+        exit("You must choose one option betwen -c and -d")
 
     if args.compress:
         compress(args.FILENAME)
