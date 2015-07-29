@@ -13,9 +13,9 @@ def compress(fn):
     data = open(fn, "rb").read()
     compressed = sorted([base64.b64encode(bytes([i])+comp.compress(data)) for i,comp in enumerate([bz2, gzip, zlib])], key=len)
     if len(compressed[0]) > MAX_FILENAME_LEN:
-        exit("The compressed file is too big to be saved.")
+        exit("The compressed file is too big to be saved. (%d>%d)" % (len(compressed[0]), MAX_FILENAME_LEN))
     open(compressed[0], "w").close()
-    print("The compressed file has been saved in the file: %s" % compressed[0])
+    print("The compressed file has been saved in the file: %s" % compressed[0].decode("utf8"))
 
 def decompress(fn):
     data = base64.b64decode(fn)
