@@ -19,3 +19,6 @@ b6d81b360a5672d80c27430f39153e2c  decompressed
 $> md5sum original 
 b6d81b360a5672d80c27430f39153e2c  original
 ```
+
+
+[![asciicast](https://asciinema.org/a/bu6pgxo6xhc83d34lpep23o80.png)](https://asciinema.org/a/bu6pgxo6xhc83d34lpep23o80)
